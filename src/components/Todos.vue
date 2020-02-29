@@ -2,7 +2,7 @@
     <div>
         <h1> Todos </h1>
         <div>
-            <TodoItem v-bind:key="todo.id" v-for="todo in todos" v-bind:todo = "todo" />
+            <TodoItem  v-on:deleteTodo= "deleteTodo($event)" v-bind:key="todo.id" v-for="todo in todos" v-bind:todo = "todo" />
         </div>
     </div>
 </template>
@@ -15,7 +15,12 @@
         components: {
             TodoItem
         },
-        props: ['todos']
+        props: ['todos'],
+          methods: {
+            deleteTodo(id) {
+                this.$emit('deleteTodo', id);// this.todos = this.todos.filter((todo) => id !== todo.id)
+            }
+        }
     }
 </script>
 
