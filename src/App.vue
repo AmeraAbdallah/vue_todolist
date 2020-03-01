@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <div class="container">
+    <Header/>
     <AddTodo v-on:add-todo="addTodo"/>
     <Todos v-on:deleteTodo= "deleteTodo($event)"  v-bind:todos= 'todos'/>
   </div>
@@ -7,6 +8,7 @@
 
 <script>
 
+import Header from './components/Header';
 import Todos from './components/Todos';
 import AddTodo from './components/AddTodo';
 
@@ -14,7 +16,8 @@ export default {
   name: 'App',
   components: {
     Todos,
-    AddTodo
+    AddTodo,
+    Header
   },
   data: () => {
     return {
@@ -51,5 +54,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
+  background-color: #F7F7FF;
+}
+.container {
+  text-align: center;
 }
 </style>

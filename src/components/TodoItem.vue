@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="todo-item-container">
         <p v-bind:class= "{ completed: todo.completed}">
             <input type="checkbox" v-on:change = "onCompleteChangeHandler">
             {{todo.text}}
@@ -24,5 +24,10 @@
 <style scoped>
     .completed {
         text-decoration: line-through;
+    }
+    .todo-item-container {
+        font-size: 18px;
+        padding: 10px 0;
+        border-bottom: .2px solid #82899A;
     }
 </style>

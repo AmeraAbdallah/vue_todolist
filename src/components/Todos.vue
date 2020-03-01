@@ -1,9 +1,6 @@
 <template>
-    <div>
-        <h1> Todos </h1>
-        <div>
-            <TodoItem  v-on:deleteTodo= "deleteTodo($event)" v-bind:key="todo.id" v-for="todo in todos" v-bind:todo = "todo" />
-        </div>
+    <div class="todos-container">
+        <TodoItem  v-on:deleteTodo= "deleteTodo($event)" v-bind:key="todo.id" v-for="todo in todos" v-bind:todo = "todo" />
     </div>
 </template>
 
@@ -25,5 +22,10 @@
 </script>
 
 <style scoped>
-
+    .todos-container {
+        background-color: #545E75;
+        color: #F7F7FF;
+        width: 70%;
+        margin: 0 auto;
+    }
 </style>
